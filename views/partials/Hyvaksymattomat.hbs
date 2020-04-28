@@ -1,0 +1,30 @@
+{{#each unapproved }}
+<div class="clearfix float-my-children">
+    {{#each mokkikuvat}}
+    <div class="PICSHERE">
+        <img src="/mokkikiuvat/{{path}}" width=100>
+    </div>
+    {{/each}}
+    <div>Mökin nimi: {{nimi }}</div>
+    <div>perustiedot: {{ perustiedot }}</div>
+    <br>
+    <div>Mökin sijainti: {{ sijainti }}</div>
+    <div class="float-right"><a href="/mokit/{{ _id }}" target="_blank" class="btn btn-success">Varaa</a>
+        <form method="POST" action="/approve/{{ _id }}"><button type="submit" class="btn btn-success">Hyväksy</button>
+        </form>
+        <form method="POST" action="/delete/{{ _id }}"><button type="submit" class="btn btn-danger">Delete</button>
+        </form>
+    </div>
+
+    <div>Hinta: {{ hinta }}</div>
+    <br>
+    <div>Mökin huoneet: {{ huoneet }}</div>
+    <div>Koko: {{ koko }}</div>
+    <br>
+    <div>Etäisyydet mökistä: {{ etaisyydet }}</div>
+    <div>Varustelu: {{ varustelu }}</div>
+
+
+</div>
+
+{{/each}}

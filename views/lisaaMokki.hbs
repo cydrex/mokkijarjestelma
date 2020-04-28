@@ -1,0 +1,71 @@
+<div class="bg-demo-upload">
+    <div class=" w-50 mx-auto bg-demosub">
+        <h1>Lisää mökki!</h1>
+        <div class="alert bg-dark-m" role="alert">
+            Lähetä mökin tiedot, ne tarkistetaan ja lisätään sivulle
+        </div>
+
+        <form method="POST" action="/upload" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1" class="bmd-label-floating">Yhteystiedot</label>
+                <textarea class="form-control" id="yhteystiedot" name="yhteystiedot" rows="3"></textarea>
+
+            </div>
+
+            <div class="form-group">
+                <label for="formGroupExampleInput" class="bmd-label-floating">Mökin nimi</label>
+                <input type="text" class="form-control" id="nimi" type="text" name="nimi" required="true" value="">
+            </div>
+
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1" class="bmd-label-floating">perustiedot</label>
+                <textarea class="form-control" class="form-control" id="perustiedot" type="text" name="perustiedot"
+                    rows="3" required="true" value=""></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="formGroupExampleInput" class="bmd-label-floating">Huoneet</label>
+                <input type="text" class="form-control" id="huoneet" type="text" name="huoneet" required="true"
+                    value="">
+            </div>
+
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1" class="bmd-label-floating">Varustelut</label>
+                <textarea class="form-control" class="form-control" id="varustelu" type="text" name="varustelu" rows="3"
+                    required="true" value=""></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="formGroupExampleInput" class="bmd-label-floating">Koko</label>
+                <input type="text" class="form-control" id="koko" type="text" name="koko" required="true" value="">
+            </div>
+
+            <div class="form-group">
+                <label for="formGroupExampleInput" class="bmd-label-floating">Sijainti</label>
+                <input type="text" class="form-control" id="sijainti" type="text" name="sijainti" required="true"
+                    value="">
+            </div>
+
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1" class="bmd-label-floating">Etäisyydet</label>
+                <textarea class="form-control" class="form-control" id="etaisyydet" type="text" name="etaisyydet"
+                    rows="3" required="true" value=""></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="formGroupExampleInput" class="bmd-label-floating">Hinta per päivä</label>
+                <input type="text" class="form-control" id="hinta" type="text" name="hinta" required="true" value="">
+            </div>
+
+            <label class="btn btn-deep-grey">
+                valitse kuvat <input type="file" name="mokki" required="true" hidden>
+            </label>
+            <div class="form-group">
+                <button class="btn btn-deep-purple text-success" type="submit">Lähetä mökki!</button>
+                <button class="btn btn-deep-purple text-danger" type="cancel"
+                    onclick="window.location='/';return false;">Peru</button>
+            </div>
+        </form>
+        <br>
+    </div>
+</div>

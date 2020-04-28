@@ -1,0 +1,36 @@
+<div class="mb-4" style="max-width: 360px; margin: 0 auto; col-sm-10">
+    <form method="POST" action="/register">
+
+        <h3>Rekisteröidy</h3>
+        <div class="form-group">
+            <label for="formGroupExampleInput" class="bmd-label-floating">Käyttäjä</label>
+            <input type="text" class="form-control" id="username" type="text" name="username" required="true" value="">
+        </div>
+
+        <div class="form-group">
+            <label for="formGroupExampleInput" class="bmd-label-floating">Salasana</label>
+            <input type="password" class="form-control" id="password" type="password" name="password" required="true"
+                value="">
+        </div>
+
+        <input type="hidden" class="form-control" id="registercode" name="registercode" required="true" value="">
+
+        <div class="form-group">
+            <button class="btn btn-primary bg-dark" type="register">Rekisteröidy</button>
+        </div>
+
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', function (event) {
+        const urlParams = new URLSearchParams(window.location.search),
+            registrationCode = urlParams.get('registrationCode'),
+            input = document.querySelector('#registercode');
+
+        if (registrationCode && registrationCode.length) {
+            input.value = registrationCode;
+        } else {
+            console.log('Ei rekisteröitymis koodia!');
+        }
+    });
+</script>
+</form>

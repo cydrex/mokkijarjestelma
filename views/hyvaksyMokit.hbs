@@ -1,0 +1,19 @@
+<ul class="nav nav-tabs nav-justified md-tabs indigo bg-materialbck" id="myTabJust" role="tablist">
+    <li class="nav-item">
+        <a class="nav-link active" id="unapproved-mokit" data-toggle="tab" href="#unapproved" role="tab"
+            aria-controls="unapproved" aria-selected="true">hyväksyttömät</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" id="approved-mokit" data-toggle="tab" href="#approved" role="tab" aria-controls="approved"
+            aria-selected="false">Hyväksytyt</a>
+    </li>
+</ul>
+
+<div class="tab-content card pt-5" id="myTabContentJust">
+    <div class="tab-pane fade show active" id="unapproved" role="tabpanel" aria-labelledby="unapproved">
+        {{>Hyvaksymattomat}}
+    </div>
+    <div class="tab-pane fade" id="approved" role="tabpanel" aria-labelledby="approved">
+        {{>Hyvaksytyt}}
+    </div>
+</div>

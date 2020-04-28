@@ -1,0 +1,20 @@
+<div class="clearfix float-my-children">
+    {{#each cottage.mokkikuvat}}
+    <div class="PICSHERE">
+        <img src="/mokkikiuvat/{{path}}" width=100>
+    </div>
+    {{/each}}
+    <div>Mökin nimi: {{cottage.nimi }}</div>
+    <div>perustiedot: {{ cottage.perustiedot }}</div>
+    <br>
+    <div>Mökin sijainti: {{ cottage.sijainti }}</div>
+    <div>Hinta: {{ hinta }}</div>
+    <br>
+    <div>Mökin huoneet: {{ cottage.huoneet }}</div>
+    <div>Koko: {{ cottage.koko }}</div>
+    <br>
+    <div>Etäisyydet mökistä: {{ cottage.etaisyydet }}</div>
+    <div>Varustelu: {{ cottage.varustelu }}</div>
+
+
+</div>
