@@ -21,3 +21,12 @@
 }
 
 /* end clearfix*/
+
+.preview-image {
+    width: 250px;
+    float: left;
+
+  }
+  #previews {
+    list-style-type: none;
+  }

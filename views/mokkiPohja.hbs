@@ -55,38 +55,23 @@
             </div>
         </div>
 
-        <!--
-        <div class="container">
-            <div>
-                <h3 class="text-center">Mökin kuvat</h3>
-            </div>
-            <br>
-            <div id="articleCarousel" class="carousel slide" data-ride="carousel">
-                <!-- Wrapper for carousel slides -->
-        <div data-wch-content-search="fq=type:(%22Sample Article%22)&sort=lastModified%20desc&rows=3"
-            id="articleCarouselInner" class="carousel-inner" role="listbox">
-            {{#each cottage.mokkikuvat}}
-            <!-- active class needs to be set just for first value -->
-            {{#if @first}}
-            <div class="item active">
-                {{else}}
-                <div class="item">
-                    {{/if}}
-                    <img class="carousel-image" src="/mokkikiuvat/{{path}}" width="460" height="345">
+
+
+
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                {{#each cottage.mokkikuvat}}
+                <div class="carousel-item{{#if @first}} active{{/if}}">
+                    <img class="d-block w-100" src="/mokkikiuvat/{{path}}" alt="First slide">
                 </div>
                 {{/each}}
-
             </div>
-            <!-- Left and right controls -->
-            <a class="left carousel-control" href="#articleCarousel" role="button" data-slide="prev">
-                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="sr-only">Previous</span>
             </a>
-            <a class="right carousel-control" href="#articleCarousel" role="button" data-slide="next">
-                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="sr-only">Next</span>
             </a>
         </div>
-    </div>
-</div>
-</div>

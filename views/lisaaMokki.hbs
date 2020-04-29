@@ -57,15 +57,69 @@
                 <input type="text" class="form-control" id="hinta" type="text" name="hinta" required="true" value="">
             </div>
 
-            <label class="btn btn-deep-grey">
-                valitse kuvat <input type="file" name="mokki" required="true" accept="image/*" hidden multiple>
-            </label>
+
             <div class="form-group">
-                <button class="btn btn-deep-purple text-success" type="submit">Lähetä mökki!</button>
-                <button class="btn btn-deep-purple text-danger" type="cancel"
-                    onclick="window.location='/';return false;">Peru</button>
+                <label class="btn btn-deep-grey">
+                    valitse kuvat <input type="file" id="mokki-file" name="mokki" required="true" accept="image/*"
+                        hidden multiple>
+                </label>
+
+                <ul id="previews">
+
+                </ul>
+
+                <div class="form-group">
+                    <button class="btn btn-deep-purple text-success" type="submit">Lähetä mökki!</button>
+                    <button class="btn btn-deep-purple text-danger" type="cancel"
+                        onclick="window.location='/';return false;">Peru</button>
+                </div>
             </div>
         </form>
         <br>
     </div>
 </div>
+
+<script type="text/javascript">
+    function generateImagePreviewItem(file) {
+        const item = document.createElement("li"),
+            image = document.createElement("img"),
+            imageUrl = window.URL.createObjectURL(file);
+
+        image.classList.add("preview-image");
+
+        image.setAttribute("src", imageUrl);
+        item.appendChild(image);
+        return item;
+    }
+
+    function renderImagePreviews(files) {
+        const previewList = document.querySelector('#previews');
+
+        files.forEach(function (file) {
+            const listItem = generateImagePreviewItem(file);
+
+            previewList.appendChild(listItem);
+        });
+    }
+
+    document.addEventListener('DOMContentLoaded', function (event) {
+        const fileInput = document.querySelector('#mokki-file'),
+            previewList = document.querySelector('#previews');
+
+        fileInput.addEventListener('change', function (event) {
+            const fileList = [];
+
+            for (let i = 0, l = fileInput.files.length; i < l; i++) {
+                const file = fileInput.files[i];
+
+                fileList.push(file);
+            }
+
+            while (previewList.lastElementChild) {
+                previewList.removeChild(previewList.lastElementChild);
+            }
+
+            renderImagePreviews(fileList);
+        });
+    });
+</script>
