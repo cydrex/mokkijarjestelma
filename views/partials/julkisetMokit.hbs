@@ -1,0 +1,27 @@
+{{#each approved }}
+<div class="mb-4" style="max-width: 75%; margin: 0 auto; col-sm-10">
+
+    <div class="clearfix float-my-children border border-info">
+        {{#each mokkikuvat}}
+        <div class="PICSHERE">
+            <img src="/mokkikiuvat/{{path}}" width=100>
+        </div>
+        {{/each}}
+        <div>Mökin nimi: {{nimi }}</div>
+        <br>
+        <div>Mökin sijainti: {{ sijainti }}</div>
+        <div class="float-right"><a href="/mokit/{{ _id }}" target="_blank" class="btn btn-success">Varaa</a></div>
+        <div class="float-right">
+            <h2>Päivä hinta: {{ hinta }}€</h2>
+        </div>
+        <br>
+        <div>Mökin huoneet: {{ huoneet }}</div>
+        <br>
+        <div>Koko: {{ koko }}</div>
+
+
+    </div>
+</div>
+
+
+{{/each}}

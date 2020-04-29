@@ -1,5 +1,5 @@
 {{#each approved }}
-<div class="clearfix float-my-children">
+<div class="clearfix float-my-children .borderin">
     {{#each mokkikuvat}}
     <div class="PICSHERE">
         <img src="/mokkikiuvat/{{path}}" width=100>
@@ -10,7 +10,11 @@
     <br>
     <div>Mökin sijainti: {{ sijainti }}</div>
     <div class="float-right"><a href="/mokit/{{ _id }}" target="_blank" class="btn btn-success">Varaa</a></div>
-    {{#if user}} {{> deleteButton}} {{/if}}
+    <div>
+        <form method="POST" action="/delete/{{ _id }}"><button type="submit"
+                class="btn btn-danger float-right">Poista</button>
+        </form>
+    </div>
     <div>Hinta: {{ hinta }}</div>
     <br>
     <div>Mökin huoneet: {{ huoneet }}</div>

@@ -1,20 +1,92 @@
-<div class="clearfix float-my-children">
+<div class="mb-4" style="max-width: 75%; margin: 0 auto; col-sm-10">
     {{#each cottage.mokkikuvat}}
     <div class="PICSHERE">
         <img src="/mokkikiuvat/{{path}}" width=100>
     </div>
     {{/each}}
-    <div>Mökin nimi: {{cottage.nimi }}</div>
-    <div>perustiedot: {{ cottage.perustiedot }}</div>
+
+    <div>
+        <h1>Mökin nimi: {{cottage.nimi }}</h1>
+    </div>
     <br>
-    <div>Mökin sijainti: {{ cottage.sijainti }}</div>
-    <div>Hinta: {{ hinta }}</div>
+    <div>
+        <h2>Hinta per päivä: {{ cottage.hinta }}€</h2>
+    </div>
     <br>
-    <div>Mökin huoneet: {{ cottage.huoneet }}</div>
-    <div>Koko: {{ cottage.koko }}</div>
     <br>
-    <div>Etäisyydet mökistä: {{ cottage.etaisyydet }}</div>
-    <div>Varustelu: {{ cottage.varustelu }}</div>
 
 
+
+
+    <h3>Mökin tiedot</h3>
+    <div class="grid-container">
+        <div class="lista">
+            <div class="float-left">
+                <div class="list-group" id="myList" role="tablist">
+                    <a class="list-group-item list-group-item-action active" data-toggle="list" href="#perustiedot"
+                        role="tab">Perustiedot</a>
+                    <a class="list-group-item list-group-item-action" data-toggle="list" href="#huoneet"
+                        role="tab">Huoneet</a>
+                    <a class="list-group-item list-group-item-action" data-toggle="list" href="#varustelu"
+                        role="tab">Varustelu</a>
+                    <a class="list-group-item list-group-item-action" data-toggle="list" href="#koko"
+                        role="tab">Koko</a>
+                    <a class="list-group-item list-group-item-action" data-toggle="list" href="#sijainti"
+                        role="tab">Sijainti</a>
+                    <a class="list-group-item list-group-item-action" data-toggle="list" href="#Etäisyydet"
+                        role="tab">Etäisyydet</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="tiedot">
+            <div class="float-left">
+                <div class="tab-content">
+                    <div class="tab-pane active" id="perustiedot" role="tabpanel">
+                        perustiedot mökistä: {{ cottage.perustiedot }}</div>
+                    <div class="tab-pane" id="huoneet" role="tabpanel">{{ cottage.huoneet }}</div>
+                    <div class="tab-pane" id="varustelu" role="tabpanel">{{ cottage.varustelu }}</div>
+                    <div class="tab-pane" id="koko" role="tabpanel">{{ cottage.koko }}</div>
+                    <div class="tab-pane" id="sijainti" role="tabpanel">{{ cottage.sijainti }}</div>
+                    <div class="tab-pane" id="etäisyydet" role="tabpanel">{{ cottage.etaisyydet }}
+                    </div>
+                    </perustiedot>
+                </div>
+            </div>
+        </div>
+
+        <!--
+        <div class="container">
+            <div>
+                <h3 class="text-center">Mökin kuvat</h3>
+            </div>
+            <br>
+            <div id="articleCarousel" class="carousel slide" data-ride="carousel">
+                <!-- Wrapper for carousel slides -->
+        <div data-wch-content-search="fq=type:(%22Sample Article%22)&sort=lastModified%20desc&rows=3"
+            id="articleCarouselInner" class="carousel-inner" role="listbox">
+            {{#each cottage.mokkikuvat}}
+            <!-- active class needs to be set just for first value -->
+            {{#if @first}}
+            <div class="item active">
+                {{else}}
+                <div class="item">
+                    {{/if}}
+                    <img class="carousel-image" src="/mokkikiuvat/{{path}}" width="460" height="345">
+                </div>
+                {{/each}}
+
+            </div>
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#articleCarousel" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#articleCarousel" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+</div>
 </div>

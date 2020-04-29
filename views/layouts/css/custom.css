@@ -21,9 +21,3 @@
 }
 
 /* end clearfix*/
-
-/* below is just to make things easier to see, not required */
-body > div {
-    border:1px dashed red;
-    margin-bottom:10px;    
-}

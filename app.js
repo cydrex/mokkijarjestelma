@@ -197,7 +197,7 @@ app.post('/approve/:id', function (req, res) {
             res.redirect("/error");
         } else {
             console.log('approved!');
-            res.redirect('/getDemos');
+            res.redirect('/hyvaksyMokit');
         }
     });
 });
