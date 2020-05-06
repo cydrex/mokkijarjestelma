@@ -2,11 +2,17 @@
 <div class="mb-4" style="max-width: 75%; margin: 0 auto; col-sm-10">
 
     <div class="clearfix float-my-children border border-info">
-        {{#each mokkikuvat}}
-        <div class="PICSHERE">
-            <img src="/mokkikiuvat/{{path}}" width=100>
+        <div class="col-sm-3 col-sm-c">
+            <div id="approved-carousel{{@index}}" class="carousel slide house-item" data-ride="carousel">
+                <div class="carousel-inner">
+                    {{#each mokkikuvat}}
+                    <div class="carousel-item{{#if @first}} active{{/if}}">
+                        <img class="float-left house-item-image" src="/mokkikiuvat/{{path}}" alt="First slide">
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
         </div>
-        {{/each}}
         <div>Mökin nimi: {{nimi }}</div>
         <br>
         <div>Mökin sijainti: {{ sijainti }}</div>

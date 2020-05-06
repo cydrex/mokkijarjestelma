@@ -30,3 +30,32 @@
   #previews {
     list-style-type: none;
   }
+
+  .house-item-image {
+    height: 120px;
+  }
+
+  .col-sm-c {
+    max-width: 220px;
+    overflow: hidden;
+  }
+
+  .col-sm-x {
+    max-height: 500px;
+    overflow: hidden;
+  }
+
+  .jumbotron {
+    background-image: url("/img/mokki.jpg");
+    background-size: cover;
+    text-align:center;
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    }
+    
+    .jumbotron .container {
+    position: relative;
+    top:100px;
+    }
+    

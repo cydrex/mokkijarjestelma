@@ -1,30 +1,41 @@
 {{#each unapproved }}
-<div class="clearfix float-my-children">
-    {{#each mokkikuvat}}
-    <div class="PICSHERE">
-        <img src="/mokkikiuvat/{{path}}" width=100>
+<div class="mb-4" style="max-width: 75%; margin: 0 auto; col-sm-10">
+    <div class="clearfix float-my-children border border-info">
+        <div class="col-sm-3 col-sm-c">
+            <div id="approved-carousel{{@index}}" class="carousel slide house-item img-thumbnail" data-ride="carousel">
+                <div class="carousel-inner">
+                    {{#each mokkikuvat}}
+                    <div class="carousel-item{{#if @first}} active{{/if}}">
+                        <img class="float-left house-item-image d-block w-10" src="/mokkikiuvat/{{path}}"
+                            alt="First slide">
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+        <div>Mökin nimi: {{nimi }}</div>
+        <br>
+        <div>Mökin sijainti: {{ sijainti }}</div>
+        <div class="float-right">
+            <h2>Päivä hinta: {{ hinta }}€</h2>
+            <form method="POST" class="d-inline-block float-right mr-1" action="/approve/{{ _id }}"><button
+                    type="submit" class="btn btn-success">Hyväksy</button>
+            </form>
+            <form method="POST" class="d-inline-block mr-1" action="/delete/{{ _id }}"><button type="submit"
+                    class="btn btn-danger">Poista</button>
+            </form>
+            <div class="float-right d-inline-block float-right mr-1"><a href="/mokit/{{ _id }}" target="_blank"
+                    class="btn btn-primary">Katso tiedot</a>
+            </div>
+        </div>
+        <br>
+        <div>Mökin huoneet: {{ huoneet }}</div>
+        <br>
+        <div>Koko: {{ koko }}</div>
+
+
     </div>
-    {{/each}}
-    <div>Mökin nimi: {{nimi }}</div>
-    <div>perustiedot: {{ perustiedot }}</div>
-    <br>
-    <div>Mökin sijainti: {{ sijainti }}</div>
-    <div class="float-right"><a href="/mokit/{{ _id }}" target="_blank" class="btn btn-success">Varaa</a>
-        <form method="POST" action="/approve/{{ _id }}"><button type="submit" class="btn btn-success">Hyväksy</button>
-        </form>
-        <form method="POST" action="/delete/{{ _id }}"><button type="submit" class="btn btn-danger">Delete</button>
-        </form>
-    </div>
-
-    <div>Hinta: {{ hinta }}</div>
-    <br>
-    <div>Mökin huoneet: {{ huoneet }}</div>
-    <div>Koko: {{ koko }}</div>
-    <br>
-    <div>Etäisyydet mökistä: {{ etaisyydet }}</div>
-    <div>Varustelu: {{ varustelu }}</div>
-
-
 </div>
+
 
 {{/each}}

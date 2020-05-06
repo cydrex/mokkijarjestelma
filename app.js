@@ -206,7 +206,7 @@ function deleteFiles(files, callback) {
     let length = files.length;
     if (!length) return callback(null);
     files.forEach(function (file) {
-        fs.unlink(file.path, function (err) {
+        fs.unlink(path.join("mokkikuvat/" + file.path), function (err) {
             length--;
             if (err) {
                 callback(err);
@@ -225,6 +225,7 @@ app.post('/delete/:id', function (req, res) {
         } else {
             deleteFiles(data.mokkikuvat, function (err, success) {
                 if (err) {
+                    console.log(err);
                     res.render('errorPage');
                     return;
                 }
